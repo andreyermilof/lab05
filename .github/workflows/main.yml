@@ -30,3 +30,7 @@ jobs:
           
       - name: run-test
         run: ./build/lib_test
+      
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@1.1.3
+
