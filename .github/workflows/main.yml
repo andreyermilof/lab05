@@ -1,0 +1,30 @@
+name: test
+
+on:
+  push:
+    branches: [ master ]
+
+
+
+
+jobs:
+
+  testing:
+    runs-on: ubuntu-latest
+
+    steps:
+  
+      - uses: actions/checkout@v3
+      
+      - name: Install
+        run: |
+          sudo apt install g++ cmake
+          git submodule add https://github.com/google/googletest
+
+      - name: Build-and-run-tests
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./lib_test
