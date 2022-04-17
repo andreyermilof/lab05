@@ -80,7 +80,8 @@ TEST(Transaction, Make){
     EXPECT_THROW(t.Make(a1, a1, 120), std::logic_error);
     EXPECT_THROW(t.Make(a1, a2, - 1), std::invalid_argument);
     EXPECT_THROW(t.Make(a1, a2, 90), std::logic_error);
-
+    
+    EXPECT_EQ(t.Make(a1, a2, 200000), false);
     EXPECT_EQ(t.Make(a1, a2, 1000), true);
     EXPECT_EQ(t.Make(a1, a2, 400), false);
 }
