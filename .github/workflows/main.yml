@@ -30,6 +30,12 @@ jobs:
           
       - name: run-test
         run: ./build/lib_test
+        
+      - name: add-info
+        run: |
+          mkdir coverage
+          cd coverage
+          lcov -t "test" -o lcov.info -c -d ./build/CMakeFiles/lib_test.dir 
       
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@1.1.3
