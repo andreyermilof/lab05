@@ -33,7 +33,7 @@ TEST(Account, Lock){
     EXPECT_NO_THROW(a.Account::Lock());
     EXPECT_THROW(a.Account::Lock(), std::runtime_error);
 }
-/*
+
 TEST(Account, Unlock){
     MockAccount a(13, 5000);
 
@@ -85,7 +85,7 @@ TEST(Transaction, Make){
     EXPECT_EQ(t.Make(a1, a2, 1000), true);
     EXPECT_EQ(t.Make(a1, a2, 400), false);
 }
-*/
+
 int main (int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
