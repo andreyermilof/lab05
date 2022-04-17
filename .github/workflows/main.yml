@@ -18,7 +18,7 @@ jobs:
       
       - name: Install
         run: |
-          sudo apt install g++ cmake
+          sudo apt install g++ cmake gcov
           git submodule add https://github.com/google/googletest
 
       - name: Build-and-run-tests
@@ -27,4 +27,6 @@ jobs:
           cd build
           cmake ..
           cmake --build .
-          ./lib_test
+          
+      - name: run-test
+        run: ./lib_test
